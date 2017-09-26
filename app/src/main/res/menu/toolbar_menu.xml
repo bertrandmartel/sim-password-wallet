@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/button_mode"
+        android:icon="@drawable/ic_memory"
+        android:title="@string/menu_title_mode"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/button_save"
+        android:icon="@drawable/ic_save"
+        android:title="@string/menu_title_save"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/button_delete"
+        android:icon="@drawable/ic_delete"
+        android:title="@string/menu_title_delete"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/button_add_password"
+        android:icon="@drawable/ic_add"
+        android:title="@string/menu_title_add"
+        app:showAsAction="always" />
+
+</menu>

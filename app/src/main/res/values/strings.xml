@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">SIM Password Wallet</string>
+    <string name="app_display_name">SIM Wallet</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="menu_title_open_source_components">open source components</string>
+    <string name="menu_title_close_session">close session</string>
+    <string name="menu_title_change_pincode">change pin code</string>
+    <string name="menu_title_about">about</string>
+    <string name="dialog_ok">OK</string>
+    <string name="about">about</string>
+    <string name="open_source_items">Open Source components</string>
+    <string name="copyright">\u00a9 2017 Bertrand Martel</string>
+    <string name="github_link">https://github.com/bertrandmartel/sim-password-wallet</string>
+    <string name="menu_title_save">save</string>
+    <string name="menu_title_delete">delete</string>
+    <string name="menu_title_mode">switch mode</string>
+    <string name="app_title">SIM Password Wallet</string>
+    <string name="menu_title_add">add password entry</string>
+    <string name="no_password">no password created yet</string>
+    <string name="title_password">Password list</string>
+    <string name="title_edit_password">Edit password</string>
+    <string name="title_create_password">Create password</string>
+    <string name="text_obfuscation_toggle_caption_decrypt">show decrypted password</string>
+    <string name="text_obfuscation_toggle_caption">show password</string>
+    <string name="mode_sim">store password on SIM</string>
+    <string name="mode_app">store password on App</string>
+    <string name="mode_description">Select the location where password should be stored (only encrypted password are stored, for App storage encryption/decryption is done on SIM card)</string>
+    <string name="mode_title">Storage mode</string>
+</resources>

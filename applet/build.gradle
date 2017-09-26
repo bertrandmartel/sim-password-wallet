@@ -1,0 +1,72 @@
+apply plugin: 'javacard'
+
+javacard {
+
+    config {
+        jckit '../oracle_javacard_sdks/jc221_kit'
+
+        cap {
+            packageName 'fr.bmartel.smartcard.passwordwallet'
+            version '0.1'
+            aid 'D2:76:00:01:18:00:02:FF:49:50:25:89:C0:01:00:00'
+            output 'applet.cap'
+            applet {
+                className 'fr.bmartel.smartcard.passwordwallet.PasswordWalletApplet'
+                aid 'D2:76:00:01:18:00:02:FF:49:50:25:89:C0:01:9B:01'
+            }
+
+            dependencies {
+                remote 'fr.bmartel:gplatform:2.1.1'
+            }
+        }
+    }
+    scripts {
+        script {
+            name 'select'
+            apdu '00:A4:04:00:10:D2:76:00:01:18:00:02:FF:49:50:25:89:C0:01:9B:01'
+        }
+        script {
+            name 'encryptEmpty'
+            apdu '90:10:00:00:00'
+        }
+        script {
+            name 'encrypt16'
+            apdu '90:10:00:00:02:01:02'
+        }
+        script {
+            name 'encrypt32'
+            apdu '90:10:00:00:11:01:02:03:04:05:06:07:08:09:0A:0B:0C:0D:0E:0F:10:11'
+        }
+        script {
+            name 'mode'
+            apdu '9040000000'
+        }
+        task {
+            name 'sendEncryptEmpty'
+            scripts 'select', 'encryptEmpty'
+        }
+        task {
+            name 'sendEncrypt16'
+            scripts 'select', 'encrypt16'
+        }
+        task {
+            name 'sendEncrypt32'
+            scripts 'select', 'encrypt32'
+        }
+        task {
+            name 'getMode'
+            scripts 'select', 'mode'
+        }
+
+    }
+}
+
+test {
+    systemProperty 'testMode', System.getProperty("testMode") ?: 'simulator'
+    include '**/TestSuite.class'
+    outputs.upToDateWhen { false }
+    testLogging {
+        showStandardStreams = true
+        exceptionFormat = 'full'
+    }
+}
